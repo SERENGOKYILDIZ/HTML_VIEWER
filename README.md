@@ -38,7 +38,7 @@ A modern, feature-rich web development environment built with Python and Tkinter
 
 1. **Clone the repository**
    ```bash
-   git clone <https://github.com/SERENGOKYILDIZ/HTML_VIEWER.git>
+   git clone https://github.com/SERENGOKYILDIZ/HTML_VIEWER.git
    cd HTML_VIEWER
    ```
 
