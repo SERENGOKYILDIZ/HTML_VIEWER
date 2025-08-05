@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Web Görüntüleyici - Tam HTML/CSS/JS Desteği</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .feature-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .feature-card h3 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 5px;
+            transition: background 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #5a6fd8;
+        }
+        .demo-box {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .js-status {
+            background: #e8f5e8;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+        .success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .info {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Web Görüntüleyici</h1>
+        <p>Bu ortam ile HTML, CSS ve JavaScript kodlarınızı tam olarak test edebilirsiniz.</p>
+        
+        <div class="success">
+            <strong>✅ Tam Desteklenen Özellikler:</strong><br>
+            • HTML5 tam desteği<br>
+            • CSS3 animasyonları ve geçişler<br>
+            • JavaScript tam çalıştırma<br>
+            • Modern web standartları<br>
+            • Responsive tasarım<br>
+            • Gerçek tarayıcı motoru
+        </div>
+        
+        <div class="info">
+            <strong>💡 Kullanım:</strong><br>
+            • Kodunuzu editörde yazın<br>
+            • "Görüntüle" butonuna tıklayın<br>
+            • Program içinde tam tarayıcı açılır
+        </div>
+        
+        <div class="demo-box">
+            <h3>🎉 CSS Animasyonları Çalışıyor!</h3>
+            <p>Bu kutu CSS animasyonları ile oluşturulmuştur.</p>
+        </div>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>📝 HTML5 Desteği</h3>
+                <p>Modern HTML5 standartları tam destek</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎨 CSS3 Animasyonları</h3>
+                <p>CSS animasyonları ve geçişler</p>
+            </div>
+            <div class="feature-card">
+                <h3>⚡ JavaScript Çalıştırma</h3>
+                <p>JavaScript kodları tam olarak çalışır</p>
+            </div>
+            <div class="feature-card">
+                <h3>📱 Responsive Tasarım</h3>
+                <p>Mobil uyumlu tasarım desteği</p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <button class="btn" onclick="showMessage()">JavaScript Test</button>
+            <button class="btn" onclick="changeColor()">Renk Değiştir</button>
+            <button class="btn" onclick="testAnimation()">Animasyon Test</button>
+            <button class="btn" onclick="testDOM()">DOM Test</button>
+            <button class="btn" onclick="testFetch()">Fetch Test</button>
+        </div>
+        
+        <div id="message" style="margin-top: 20px; padding: 15px; background: #e8f5e8; border-radius: 5px; display: none;">
+            JavaScript çalışıyor! 🎉
+        </div>
+        
+        <div id="js-status" class="js-status">
+            JavaScript Durumu: Kontrol ediliyor...
+        </div>
+        
+        <div id="fetch-result" style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 5px; display: none;">
+            Fetch sonucu burada görünecek...
+        </div>
+    </div>
+    
+    <script>
+        // JavaScript durumunu kontrol et
+        function checkJavaScript() {
+            const statusDiv = document.getElementById('js-status');
+            try {
+                // JavaScript test
+                const test = new Date();
+                statusDiv.innerHTML = '✅ JavaScript Tam Çalışıyor! Tarih: ' + test.toLocaleString();
+                statusDiv.style.background = '#e8f5e8';
+                statusDiv.style.color = '#2d5a2d';
+            } catch (e) {
+                statusDiv.innerHTML = '❌ JavaScript Çalışmıyor: ' + e.message;
+                statusDiv.style.background = '#f8d7da';
+                statusDiv.style.color = '#721c24';
+            }
+        }
+        
+        function showMessage() {
+            const messageDiv = document.getElementById('message');
+            messageDiv.style.display = 'block';
+            messageDiv.style.animation = 'fadeIn 0.5s ease';
+            messageDiv.innerHTML = '🎉 JavaScript Tam Çalışıyor! Tarih: ' + new Date().toLocaleString();
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 3000);
+        }
+        
+        function changeColor() {
+            const cards = document.querySelectorAll('.feature-card');
+            const colors = ['#667eea', '#ff6b6b', '#4ecdc4', '#45b7d1'];
+            cards.forEach((card, index) => {
+                card.style.borderLeftColor = colors[index % colors.length];
+                card.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    card.style.transform = 'scale(1)';
+                }, 200);
+            });
+        }
+        
+        function testAnimation() {
+            const container = document.querySelector('.container');
+            container.style.animation = 'none';
+            container.offsetHeight; // Trigger reflow
+            container.style.animation = 'fadeIn 1s ease-in';
+        }
+        
+        function testDOM() {
+            const newElement = document.createElement('div');
+            newElement.innerHTML = '<h4>✅ DOM Manipülasyonu Çalışıyor!</h4><p>Yeni element başarıyla oluşturuldu.</p>';
+            newElement.style.background = '#fff3cd';
+            newElement.style.padding = '15px';
+            newElement.style.borderRadius = '5px';
+            newElement.style.margin = '10px 0';
+            document.querySelector('.container').appendChild(newElement);
+            
+            setTimeout(() => {
+                newElement.remove();
+            }, 3000);
+        }
+        
+        async function testFetch() {
+            const resultDiv = document.getElementById('fetch-result');
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = '🔄 Fetch test ediliyor...';
+            
+            try {
+                // Basit bir API testi
+                const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+                const data = await response.json();
+                resultDiv.innerHTML = '✅ Fetch Başarılı!<br>Başlık: ' + data.title;
+                resultDiv.style.background = '#d4edda';
+                resultDiv.style.color = '#155724';
+            } catch (error) {
+                resultDiv.innerHTML = '❌ Fetch Hatası: ' + error.message;
+                resultDiv.style.background = '#f8d7da';
+                resultDiv.style.color = '#721c24';
+            }
+            
+            setTimeout(() => {
+                resultDiv.style.display = 'none';
+            }, 5000);
+        }
+        
+        // Sayfa yüklendiğinde animasyon
+        window.addEventListener('load', function() {
+            const container = document.querySelector('.container');
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                container.style.transition = 'all 1s ease';
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            }, 100);
+            
+            // JavaScript durumunu kontrol et
+            setTimeout(checkJavaScript, 500);
+        });
+        
+        // Console test
+        console.log('JavaScript console çalışıyor!');
+        console.log('Web Görüntüleyici yüklendi!');
+    </script>
+</body>
+</html> 
